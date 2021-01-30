@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Move : MonoBehaviour // Move GameObjet smoothly from one point to another by mouse click.
 {
     public GameObject targetObj;
-    Vector3 targetPos;
-    float targetHeight;
+    Vector3 targetPos; // here we store the position of a targetObj.
+    float targetHeight; // it is use for store the y position value of targrtObj.
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class Move : MonoBehaviour
 
             if(Physics.Raycast(Camera.main.transform.position,direction,out hit, 100))
             {
-                if(hit.collider.gameObject.tag=="Plane")
+                if(hit.collider.gameObject.tag=="Plane") // it checks mouse hit on plane or not
                 targetPos = hit.point + new Vector3(0, targetHeight / 2f, 0);
                 //Here targetHeight is double the actul height of a targetObj;
             }
