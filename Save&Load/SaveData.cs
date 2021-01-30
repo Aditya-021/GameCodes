@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveData
 {
-    public static void SavePlayer(Player player)
+    public static void SavePlayer(Player player)// here we creat static function thats mean we call function from any where in scene without using the instance.
     {
         BinaryFormatter formatter = new BinaryFormatter();//here we create a binaryformatter to convert our data in binary form
         string path = Application.persistentDataPath + "/player.adi";//Locate the loaction in our device where the file will store
